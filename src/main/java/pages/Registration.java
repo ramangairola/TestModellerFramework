@@ -34,6 +34,50 @@ public class Registration extends BasePage
 
 
 	
+     
+	/**
+ 	 * Click Error: Please provide a valid email address.
+     * @name Click Error: Please provide a valid email address.
+     */
+	public void Click_Error_Please_provide_a_valid_email_address()
+	{
+	    
+		WebElement elem = getWebElement(Error_Please_provide_a_valid_email_addressElem);
+
+		if (elem == null) {
+			ExtentReportManager.failStepWithScreenshot(m_Driver, "Click_Error_Please_provide_a_valid_email_address", "Click_Error_Please_provide_a_valid_email_address failed. Unable to locate object: " + Error_Please_provide_a_valid_email_addressElem.toString());
+
+    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Click_Error_Please_provide_a_valid_email_address", "Click_Error_Please_provide_a_valid_email_address failed. Unable to locate object: " + Error_Please_provide_a_valid_email_addressElem.toString());
+
+ 			Assert.fail("Unable to locate object: " + Error_Please_provide_a_valid_email_addressElem.toString());
+        }
+        
+	}
+     
+	/**
+ 	 * Click Register
+     * @name Click Register
+     */
+	public void Click_Register()
+	{
+        
+		WebElement elem = getWebElement(RegisterElem);
+
+		if (elem == null) {
+    		ExtentReportManager.failStepWithScreenshot(m_Driver, "Click_Register", "Click_Register failed. Unable to locate object: " + RegisterElem.toString());
+
+    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Click_Register", "Click_Register failed. Unable to locate object: " + RegisterElem.toString());
+
+			Assert.fail("Unable to locate object: " + RegisterElem.toString());
+        }
+
+		elem.click();
+        
+
+		ExtentReportManager.passStep(m_Driver, "Click_Register");
+
+		TestModellerLogger.PassStep(m_Driver, "Click_Register");
+	}
       
 	/**
  	 * Enter Email address *
@@ -83,54 +127,4 @@ public class Registration extends BasePage
   		ExtentReportManager.passStep(m_Driver, "Enter_Password_ " + Password_);
 
   		TestModellerLogger.PassStep(m_Driver, "Enter_Password_ " + Password_);
- 	}
-     
-	/**
- 	 * Click Register
-     * @name Click Register
-     */
-	public void Click_Register()
-	{
-        
-		WebElement elem = getWebElement(RegisterElem);
-
-		if (elem == null) {
-    		ExtentReportManager.failStepWithScreenshot(m_Driver, "Click_Register", "Click_Register failed. Unable to locate object: " + RegisterElem.toString());
-
-    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Click_Register", "Click_Register failed. Unable to locate object: " + RegisterElem.toString());
-
-			Assert.fail("Unable to locate object: " + RegisterElem.toString());
-        }
-
-		elem.click();
-        
-
-		ExtentReportManager.passStep(m_Driver, "Click_Register");
-
-		TestModellerLogger.PassStep(m_Driver, "Click_Register");
-	}
-     
-	/**
- 	 * Click Error: Please provide a valid email address.
-     * @name Click Error: Please provide a valid email address.
-     */
-	public void Click_Error_Please_provide_a_valid_email_address()
-	{
-        
-		WebElement elem = getWebElement(Error_Please_provide_a_valid_email_addressElem);
-
-		if (elem == null) {
-    		ExtentReportManager.failStepWithScreenshot(m_Driver, "Click_Error_Please_provide_a_valid_email_address", "Click_Error_Please_provide_a_valid_email_address failed. Unable to locate object: " + Error_Please_provide_a_valid_email_addressElem.toString());
-
-    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Click_Error_Please_provide_a_valid_email_address", "Click_Error_Please_provide_a_valid_email_address failed. Unable to locate object: " + Error_Please_provide_a_valid_email_addressElem.toString());
-
-			Assert.fail("Unable to locate object: " + Error_Please_provide_a_valid_email_addressElem.toString());
-        }
-
-		elem.click();
-        
-
-		ExtentReportManager.passStep(m_Driver, "Click_Error_Please_provide_a_valid_email_address");
-
-		TestModellerLogger.PassStep(m_Driver, "Click_Error_Please_provide_a_valid_email_address");
-	}}
+ 	}}

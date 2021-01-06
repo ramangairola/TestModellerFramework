@@ -23,6 +23,8 @@ public class Automation_Practice_Site extends BasePage
 	}
 
 
+	
+	private By My_AccountElem = By.xpath("//LI[@id='menu-item-50']/A");
 
 
 	
@@ -49,4 +51,29 @@ public class Automation_Practice_Site extends BasePage
             Assert.fail("Expecting URL - "  + expectedUrl + " Found " + currentUrl);
         }
     }
-}
+
+     
+	/**
+ 	 * Click My Account
+     * @name Click My Account
+     */
+	public void Click_My_Account()
+	{
+        
+		WebElement elem = getWebElement(My_AccountElem);
+
+		if (elem == null) {
+    		ExtentReportManager.failStepWithScreenshot(m_Driver, "Click_My_Account", "Click_My_Account failed. Unable to locate object: " + My_AccountElem.toString());
+
+    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Click_My_Account", "Click_My_Account failed. Unable to locate object: " + My_AccountElem.toString());
+
+			Assert.fail("Unable to locate object: " + My_AccountElem.toString());
+        }
+
+		elem.click();
+        
+
+		ExtentReportManager.passStep(m_Driver, "Click_My_Account");
+
+		TestModellerLogger.PassStep(m_Driver, "Click_My_Account");
+	}}

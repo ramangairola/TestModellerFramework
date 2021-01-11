@@ -36,15 +36,44 @@ public class LoginPage extends BasePage
 
 
 	
-	public void GoToUrl()
+     
+	/**
+ 	 * Assert Error:
+     * @name Assert Error:
+     */
+	public void Assert_Error()
 	{
-		m_Driver.get("http://practice.automationtesting.in/my-account/");
+	    
+		WebElement elem = getWebElement(ErrorElem);
 
-		ExtentReportManager.passStepWithScreenshot(m_Driver, "Go to URL", "Go to URL - http://practice.automationtesting.in/my-account/");
+		if (elem == null) {
+			ExtentReportManager.failStepWithScreenshot(m_Driver, "Assert_Error", "Assert_Error failed. Unable to locate object: " + ErrorElem.toString());
 
-		TestModellerLogger.PassStepWithScreenshot(m_Driver, "Go to URL", "Go to URL - http://practice.automationtesting.in/my-account/");
+    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Assert_Error", "Assert_Error failed. Unable to locate object: " + ErrorElem.toString());
+
+ 			Assert.fail("Unable to locate object: " + ErrorElem.toString());
+        }
+        
 	}
+     
+	/**
+ 	 * Assert Error: Username is required.
+     * @name Assert Error: Username is required.
+     */
+	public void Assert_Error_Username_is_required()
+	{
+	    
+		WebElement elem = getWebElement(Error_Username_is_requiredElem);
 
+		if (elem == null) {
+			ExtentReportManager.failStepWithScreenshot(m_Driver, "Assert_Error_Username_is_required", "Assert_Error_Username_is_required failed. Unable to locate object: " + Error_Username_is_requiredElem.toString());
+
+    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Assert_Error_Username_is_required", "Assert_Error_Username_is_required failed. Unable to locate object: " + Error_Username_is_requiredElem.toString());
+
+ 			Assert.fail("Unable to locate object: " + Error_Username_is_requiredElem.toString());
+        }
+        
+	}
      
 	/**
  	 * AssertUrl
@@ -60,31 +89,6 @@ public class LoginPage extends BasePage
         }
     }
 
-      
-	/**
- 	 * Enter Password *
-     * @name Enter Password *
-     */
- 	public void Enter_Password_(String Password_)
- 	{
- 	    
- 		WebElement elem = getWebElement(Password_Elem);
-
- 		if (elem == null) {
-    		ExtentReportManager.failStepWithScreenshot(m_Driver, "Enter_Password_", "Enter_Password_ failed. Unable to locate object: " + Password_Elem.toString());
-
-    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Enter_Password_", "Enter_Password_ failed. Unable to locate object: " + Password_Elem.toString());
-
- 			Assert.fail("Unable to locate object: " + Password_Elem.toString());
-         }
-
- 		elem.sendKeys(Password_);
- 		
-
-  		ExtentReportManager.passStep(m_Driver, "Enter_Password_ " + Password_);
-
-  		TestModellerLogger.PassStep(m_Driver, "Enter_Password_ " + Password_);
- 	}
      
 	/**
  	 * Click Login
@@ -112,6 +116,31 @@ public class LoginPage extends BasePage
 	}
       
 	/**
+ 	 * Enter Password *
+     * @name Enter Password *
+     */
+ 	public void Enter_Password_(String Password_)
+ 	{
+ 	    
+ 		WebElement elem = getWebElement(Password_Elem);
+
+ 		if (elem == null) {
+    		ExtentReportManager.failStepWithScreenshot(m_Driver, "Enter_Password_", "Enter_Password_ failed. Unable to locate object: " + Password_Elem.toString());
+
+    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Enter_Password_", "Enter_Password_ failed. Unable to locate object: " + Password_Elem.toString());
+
+ 			Assert.fail("Unable to locate object: " + Password_Elem.toString());
+         }
+
+ 		elem.sendKeys(Password_);
+ 		
+
+  		ExtentReportManager.passStep(m_Driver, "Enter_Password_ " + Password_);
+
+  		TestModellerLogger.PassStep(m_Driver, "Enter_Password_ " + Password_);
+ 	}
+      
+	/**
  	 * Enter Username or email address *
      * @name Enter Username or email address *
      */
@@ -135,41 +164,12 @@ public class LoginPage extends BasePage
 
   		TestModellerLogger.PassStep(m_Driver, "Enter_Username_or_email_address_ " + Username_or_email_address_);
  	}
-     
-	/**
- 	 * Assert Error: Username is required.
-     * @name Assert Error: Username is required.
-     */
-	public void Assert_Error_Username_is_required()
+	public void GoToUrl()
 	{
-	    
-		WebElement elem = getWebElement(Error_Username_is_requiredElem);
+		m_Driver.get("http://practice.automationtesting.in/my-account/");
 
-		if (elem == null) {
-			ExtentReportManager.failStepWithScreenshot(m_Driver, "Assert_Error_Username_is_required", "Assert_Error_Username_is_required failed. Unable to locate object: " + Error_Username_is_requiredElem.toString());
+		ExtentReportManager.passStepWithScreenshot(m_Driver, "Go to URL", "Go to URL - http://practice.automationtesting.in/my-account/");
 
-    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Assert_Error_Username_is_required", "Assert_Error_Username_is_required failed. Unable to locate object: " + Error_Username_is_requiredElem.toString());
-
- 			Assert.fail("Unable to locate object: " + Error_Username_is_requiredElem.toString());
-        }
-        
+		TestModellerLogger.PassStepWithScreenshot(m_Driver, "Go to URL", "Go to URL - http://practice.automationtesting.in/my-account/");
 	}
-     
-	/**
- 	 * Assert Error:
-     * @name Assert Error:
-     */
-	public void Assert_Error()
-	{
-	    
-		WebElement elem = getWebElement(ErrorElem);
-
-		if (elem == null) {
-			ExtentReportManager.failStepWithScreenshot(m_Driver, "Assert_Error", "Assert_Error failed. Unable to locate object: " + ErrorElem.toString());
-
-    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Assert_Error", "Assert_Error failed. Unable to locate object: " + ErrorElem.toString());
-
- 			Assert.fail("Unable to locate object: " + ErrorElem.toString());
-        }
-        
-	}}
+}

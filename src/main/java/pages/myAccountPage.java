@@ -92,28 +92,22 @@ public class myAccountPage extends BasePage
 	}
      
 	/**
- 	 * Click Shop
-     * @name Click Shop
+ 	 * Assert Shop
+     * @name Assert Shop
      */
-	public void Click_Shop()
+	public void Assert_Shop()
 	{
-        
+	    
 		WebElement elem = getWebElement(ShopElem);
 
 		if (elem == null) {
-    		ExtentReportManager.failStepWithScreenshot(m_Driver, "Click_Shop", "Click_Shop failed. Unable to locate object: " + ShopElem.toString());
+			ExtentReportManager.failStepWithScreenshot(m_Driver, "Assert_Shop", "Assert_Shop failed. Unable to locate object: " + ShopElem.toString());
 
-    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Click_Shop", "Click_Shop failed. Unable to locate object: " + ShopElem.toString());
+    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Assert_Shop", "Assert_Shop failed. Unable to locate object: " + ShopElem.toString());
 
-			Assert.fail("Unable to locate object: " + ShopElem.toString());
+ 			Assert.fail("Unable to locate object: " + ShopElem.toString());
         }
-
-		elem.click();
         
-
-		ExtentReportManager.passStep(m_Driver, "Click_Shop");
-
-		TestModellerLogger.PassStep(m_Driver, "Click_Shop");
 	}
      
 	/**

@@ -28,6 +28,8 @@ public class BasketAutomation_Practice_Site extends BasePage
 
 	private By Selenium_RubyElem = By.xpath("//TD[@class='product-name']/A");
 
+	private By UnknownElem = By.xpath("//A[@title='Remove this item']");
+
 
 	
      
@@ -73,4 +75,29 @@ public class BasketAutomation_Practice_Site extends BasePage
  			Assert.fail("Unable to locate object: " + Selenium_RubyElem.toString());
         }
         
+	}
+     
+	/**
+ 	 * Click ×
+     * @name Click ×
+     */
+	public void Click_Unknown()
+	{
+        
+		WebElement elem = getWebElement(UnknownElem);
+
+		if (elem == null) {
+    		ExtentReportManager.failStepWithScreenshot(m_Driver, "Click_Unknown", "Click_Unknown failed. Unable to locate object: " + UnknownElem.toString());
+
+    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Click_Unknown", "Click_Unknown failed. Unable to locate object: " + UnknownElem.toString());
+
+			Assert.fail("Unable to locate object: " + UnknownElem.toString());
+        }
+
+		elem.click();
+        
+
+		ExtentReportManager.passStep(m_Driver, "Click_Unknown");
+
+		TestModellerLogger.PassStep(m_Driver, "Click_Unknown");
 	}}

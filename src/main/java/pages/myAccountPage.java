@@ -38,6 +38,8 @@ public class myAccountPage extends BasePage
 
 	private By ShopElem = By.xpath("//LI[@id='menu-item-40']/A");
 
+	private By Sign_outElem = By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[1]/div/p[1]/a");
+
 
 	
 	public void GoToUrl()
@@ -232,4 +234,29 @@ public class myAccountPage extends BasePage
  			Assert.fail("Unable to locate object: " + ShopElem.toString());
         }
         
+	}
+     
+	/**
+ 	 * Click Sign out
+     * @name Click Sign out
+     */
+	public void Click_Sign_out()
+	{
+        
+		WebElement elem = getWebElement(Sign_outElem);
+
+		if (elem == null) {
+    		ExtentReportManager.failStepWithScreenshot(m_Driver, "Click_Sign_out", "Click_Sign_out failed. Unable to locate object: " + Sign_outElem.toString());
+
+    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Click_Sign_out", "Click_Sign_out failed. Unable to locate object: " + Sign_outElem.toString());
+
+			Assert.fail("Unable to locate object: " + Sign_outElem.toString());
+        }
+
+		elem.click();
+        
+
+		ExtentReportManager.passStep(m_Driver, "Click_Sign_out");
+
+		TestModellerLogger.PassStep(m_Driver, "Click_Sign_out");
 	}}

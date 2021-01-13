@@ -57,26 +57,20 @@ public class BasketAutomation_Practice_Site extends BasePage
 	}
      
 	/**
- 	 * Click Selenium Ruby
-     * @name Click Selenium Ruby
+ 	 * Assert Selenium Ruby
+     * @name Assert Selenium Ruby
      */
-	public void Click_Selenium_Ruby()
+	public void Assert_Selenium_Ruby()
 	{
-        
+	    
 		WebElement elem = getWebElement(Selenium_RubyElem);
 
 		if (elem == null) {
-    		ExtentReportManager.failStepWithScreenshot(m_Driver, "Click_Selenium_Ruby", "Click_Selenium_Ruby failed. Unable to locate object: " + Selenium_RubyElem.toString());
+			ExtentReportManager.failStepWithScreenshot(m_Driver, "Assert_Selenium_Ruby", "Assert_Selenium_Ruby failed. Unable to locate object: " + Selenium_RubyElem.toString());
 
-    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Click_Selenium_Ruby", "Click_Selenium_Ruby failed. Unable to locate object: " + Selenium_RubyElem.toString());
+    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Assert_Selenium_Ruby", "Assert_Selenium_Ruby failed. Unable to locate object: " + Selenium_RubyElem.toString());
 
-			Assert.fail("Unable to locate object: " + Selenium_RubyElem.toString());
+ 			Assert.fail("Unable to locate object: " + Selenium_RubyElem.toString());
         }
-
-		elem.click();
         
-
-		ExtentReportManager.passStep(m_Driver, "Click_Selenium_Ruby");
-
-		TestModellerLogger.PassStep(m_Driver, "Click_Selenium_Ruby");
 	}}

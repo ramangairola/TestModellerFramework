@@ -26,6 +26,8 @@ public class BasketAutomation_Practice_Site extends BasePage
 	
 	private By _Proceed_to_CheckoutElem = By.xpath("//A[@href='http://practice.automationtesting.in/checkout/']");
 
+	private By Selenium_RubyElem = By.xpath("//TD[@class='product-name']/A");
+
 
 	
      
@@ -52,4 +54,29 @@ public class BasketAutomation_Practice_Site extends BasePage
 		ExtentReportManager.passStep(m_Driver, "Click__Proceed_to_Checkout");
 
 		TestModellerLogger.PassStep(m_Driver, "Click__Proceed_to_Checkout");
+	}
+     
+	/**
+ 	 * Click Selenium Ruby
+     * @name Click Selenium Ruby
+     */
+	public void Click_Selenium_Ruby()
+	{
+        
+		WebElement elem = getWebElement(Selenium_RubyElem);
+
+		if (elem == null) {
+    		ExtentReportManager.failStepWithScreenshot(m_Driver, "Click_Selenium_Ruby", "Click_Selenium_Ruby failed. Unable to locate object: " + Selenium_RubyElem.toString());
+
+    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Click_Selenium_Ruby", "Click_Selenium_Ruby failed. Unable to locate object: " + Selenium_RubyElem.toString());
+
+			Assert.fail("Unable to locate object: " + Selenium_RubyElem.toString());
+        }
+
+		elem.click();
+        
+
+		ExtentReportManager.passStep(m_Driver, "Click_Selenium_Ruby");
+
+		TestModellerLogger.PassStep(m_Driver, "Click_Selenium_Ruby");
 	}}

@@ -73,7 +73,8 @@ public class CheckoutAutomation_Practice_Site extends BasePage
 			Assert.fail("Unable to locate object: " + Place_orderElem.toString());
         }
 
-		elem.click();
+		JavascriptExecutor executor = (JavascriptExecutor)m_Driver;
+		executor.executeScript("arguments[0].click();", elem);
         
 
 		ExtentReportManager.passStep(m_Driver, "Click_Place_order");

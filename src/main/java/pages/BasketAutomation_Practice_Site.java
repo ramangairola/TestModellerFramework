@@ -30,6 +30,8 @@ public class BasketAutomation_Practice_Site extends BasePage
 
 	private By UnknownElem = By.xpath("//A[@title='Remove this item']");
 
+	private By _Your_basket_is_currently_emptyElem = By.xpath("//P[@class='cart-empty']");
+
 
 	
      
@@ -100,4 +102,29 @@ public class BasketAutomation_Practice_Site extends BasePage
 		ExtentReportManager.passStep(m_Driver, "Click_Unknown");
 
 		TestModellerLogger.PassStep(m_Driver, "Click_Unknown");
+	}
+     
+	/**
+ 	 * Click  Your basket is currently empty.
+     * @name Click  Your basket is currently empty.
+     */
+	public void Click__Your_basket_is_currently_empty()
+	{
+        
+		WebElement elem = getWebElement(_Your_basket_is_currently_emptyElem);
+
+		if (elem == null) {
+    		ExtentReportManager.failStepWithScreenshot(m_Driver, "Click__Your_basket_is_currently_empty", "Click__Your_basket_is_currently_empty failed. Unable to locate object: " + _Your_basket_is_currently_emptyElem.toString());
+
+    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Click__Your_basket_is_currently_empty", "Click__Your_basket_is_currently_empty failed. Unable to locate object: " + _Your_basket_is_currently_emptyElem.toString());
+
+			Assert.fail("Unable to locate object: " + _Your_basket_is_currently_emptyElem.toString());
+        }
+
+		elem.click();
+        
+
+		ExtentReportManager.passStep(m_Driver, "Click__Your_basket_is_currently_empty");
+
+		TestModellerLogger.PassStep(m_Driver, "Click__Your_basket_is_currently_empty");
 	}}

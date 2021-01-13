@@ -28,8 +28,6 @@ public class myAccountPage extends BasePage
 
 	private By MyAccountElem = By.xpath("//a[text()='My Account']");
 
-	private By ShopElem = By.xpath("//LI[@id='menu-item-40']/A");
-
 	private By My_AccountElem = By.xpath("//LI[@id='menu-item-50']/A");
 
 	private By Test_CasesElem = By.xpath("//A[@href='http://practice.automationtesting.in/test-cases/']");
@@ -38,8 +36,34 @@ public class myAccountPage extends BasePage
 
 	private By Demo_SiteElem = By.xpath("//A[@href='http://demo.automationtesting.in/Register.html']");
 
+	private By ShopElem = By.xpath("//LI[@id='menu-item-40']/A");
+
 
 	
+	public void GoToUrl()
+	{
+		m_Driver.get("http://practice.automationtesting.in/");
+
+		ExtentReportManager.passStepWithScreenshot(m_Driver, "Go to URL", "Go to URL - http://practice.automationtesting.in/");
+
+		TestModellerLogger.PassStepWithScreenshot(m_Driver, "Go to URL", "Go to URL - http://practice.automationtesting.in/");
+	}
+
+     
+	/**
+ 	 * AssertUrl
+     * @name AssertUrl
+     */
+   public void AssertUrl()
+    {
+        String currentUrl = m_Driver.getCurrentUrl();
+        String expectedUrl = "http://practice.automationtesting.in/";
+
+        if (!currentUrl.equals("http://practice.automationtesting.in/")) {
+            Assert.fail("Expecting URL - "  + expectedUrl + " Found " + currentUrl);
+        }
+    }
+
      
 	/**
  	 * Click shopLink
@@ -89,25 +113,6 @@ public class myAccountPage extends BasePage
 		ExtentReportManager.passStep(m_Driver, "Click_MyAccount");
 
 		TestModellerLogger.PassStep(m_Driver, "Click_MyAccount");
-	}
-     
-	/**
- 	 * Assert Shop
-     * @name Assert Shop
-     */
-	public void Assert_Shop()
-	{
-	    
-		WebElement elem = getWebElement(ShopElem);
-
-		if (elem == null) {
-			ExtentReportManager.failStepWithScreenshot(m_Driver, "Assert_Shop", "Assert_Shop failed. Unable to locate object: " + ShopElem.toString());
-
-    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Assert_Shop", "Assert_Shop failed. Unable to locate object: " + ShopElem.toString());
-
- 			Assert.fail("Unable to locate object: " + ShopElem.toString());
-        }
-        
 	}
      
 	/**
@@ -208,4 +213,23 @@ public class myAccountPage extends BasePage
 		ExtentReportManager.passStep(m_Driver, "Click_Demo_Site");
 
 		TestModellerLogger.PassStep(m_Driver, "Click_Demo_Site");
+	}
+     
+	/**
+ 	 * Assert Shop
+     * @name Assert Shop
+     */
+	public void Assert_Shop()
+	{
+	    
+		WebElement elem = getWebElement(ShopElem);
+
+		if (elem == null) {
+			ExtentReportManager.failStepWithScreenshot(m_Driver, "Assert_Shop", "Assert_Shop failed. Unable to locate object: " + ShopElem.toString());
+
+    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Assert_Shop", "Assert_Shop failed. Unable to locate object: " + ShopElem.toString());
+
+ 			Assert.fail("Unable to locate object: " + ShopElem.toString());
+        }
+        
 	}}

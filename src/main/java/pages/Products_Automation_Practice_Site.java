@@ -24,11 +24,11 @@ public class Products_Automation_Practice_Site extends BasePage
 
 
 	
-	private By Add_to_basketElem = By.xpath("//A[@data-product_id='181']");
-
 	private By ClickCartLinkElem = By.xpath("//a[@title='View your shopping cart']");
 
 	private By Selenium_RubyElem = By.xpath("//LI[@class='post-160 product type-product status-publish product_cat-selenium product_tag-ruby product_tag-selenium has-post-title no-post-date has-post-category has-post-tag has-post-comment has-post-author  instock downloadable taxable shipping-taxable purchasable product-type-simple']/A[@class='woocommerce-LoopProduct-link']/H3");
+
+	private By Add_to_basketElem = By.xpath("//A[@data-product_id='160']");
 
 
 	
@@ -56,31 +56,6 @@ public class Products_Automation_Practice_Site extends BasePage
         }
     }
 
-     
-	/**
- 	 * Click Add to basket
-     * @name Click Add to basket
-     */
-	public void Click_Add_to_basket()
-	{
-        
-		WebElement elem = getWebElement(Add_to_basketElem);
-
-		if (elem == null) {
-    		ExtentReportManager.failStepWithScreenshot(m_Driver, "Click_Add_to_basket", "Click_Add_to_basket failed. Unable to locate object: " + Add_to_basketElem.toString());
-
-    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Click_Add_to_basket", "Click_Add_to_basket failed. Unable to locate object: " + Add_to_basketElem.toString());
-
-			Assert.fail("Unable to locate object: " + Add_to_basketElem.toString());
-        }
-
-		elem.click();
-        
-
-		ExtentReportManager.passStep(m_Driver, "Click_Add_to_basket");
-
-		TestModellerLogger.PassStep(m_Driver, "Click_Add_to_basket");
-	}
      
 	/**
  	 * Click ClickCartLink
@@ -124,4 +99,29 @@ public class Products_Automation_Practice_Site extends BasePage
  			Assert.fail("Unable to locate object: " + Selenium_RubyElem.toString());
         }
         
+	}
+     
+	/**
+ 	 * Click Add to basket
+     * @name Click Add to basket
+     */
+	public void Click_Add_to_basket()
+	{
+        
+		WebElement elem = getWebElement(Add_to_basketElem);
+
+		if (elem == null) {
+    		ExtentReportManager.failStepWithScreenshot(m_Driver, "Click_Add_to_basket", "Click_Add_to_basket failed. Unable to locate object: " + Add_to_basketElem.toString());
+
+    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Click_Add_to_basket", "Click_Add_to_basket failed. Unable to locate object: " + Add_to_basketElem.toString());
+
+			Assert.fail("Unable to locate object: " + Add_to_basketElem.toString());
+        }
+
+		elem.click();
+        
+
+		ExtentReportManager.passStep(m_Driver, "Click_Add_to_basket");
+
+		TestModellerLogger.PassStep(m_Driver, "Click_Add_to_basket");
 	}}

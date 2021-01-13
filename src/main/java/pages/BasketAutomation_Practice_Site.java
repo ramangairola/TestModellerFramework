@@ -32,6 +32,8 @@ public class BasketAutomation_Practice_Site extends BasePage
 
 	private By _Your_basket_is_currently_emptyElem = By.xpath("//P[@class='cart-empty']");
 
+	private By _Return_To_Shop_Elem = By.xpath("//A[@class='button wc-backward']");
+
 
 	
      
@@ -127,4 +129,29 @@ public class BasketAutomation_Practice_Site extends BasePage
 		ExtentReportManager.passStep(m_Driver, "Click__Your_basket_is_currently_empty");
 
 		TestModellerLogger.PassStep(m_Driver, "Click__Your_basket_is_currently_empty");
+	}
+     
+	/**
+ 	 * Click  Return To Shop 
+     * @name Click  Return To Shop 
+     */
+	public void Click__Return_To_Shop_()
+	{
+        
+		WebElement elem = getWebElement(_Return_To_Shop_Elem);
+
+		if (elem == null) {
+    		ExtentReportManager.failStepWithScreenshot(m_Driver, "Click__Return_To_Shop_", "Click__Return_To_Shop_ failed. Unable to locate object: " + _Return_To_Shop_Elem.toString());
+
+    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Click__Return_To_Shop_", "Click__Return_To_Shop_ failed. Unable to locate object: " + _Return_To_Shop_Elem.toString());
+
+			Assert.fail("Unable to locate object: " + _Return_To_Shop_Elem.toString());
+        }
+
+		elem.click();
+        
+
+		ExtentReportManager.passStep(m_Driver, "Click__Return_To_Shop_");
+
+		TestModellerLogger.PassStep(m_Driver, "Click__Return_To_Shop_");
 	}}

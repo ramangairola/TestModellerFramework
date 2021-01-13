@@ -26,6 +26,10 @@ public class Products_Automation_Practice_Site extends BasePage
 	
 	private By Add_to_basketElem = By.xpath("//A[@data-product_id='181']");
 
+	private By ClickCartLinkElem = By.xpath("//a[@title='View your shopping cart']");
+
+	private By Selenium_RubyElem = By.xpath("//LI[@class='post-160 product type-product status-publish product_cat-selenium product_tag-ruby product_tag-selenium has-post-title no-post-date has-post-category has-post-tag has-post-comment has-post-author  instock downloadable taxable shipping-taxable purchasable product-type-simple']/A[@class='woocommerce-LoopProduct-link']/H3");
+
 
 	
 	public void GoToUrl()
@@ -76,4 +80,54 @@ public class Products_Automation_Practice_Site extends BasePage
 		ExtentReportManager.passStep(m_Driver, "Click_Add_to_basket");
 
 		TestModellerLogger.PassStep(m_Driver, "Click_Add_to_basket");
+	}
+     
+	/**
+ 	 * Click ClickCartLink
+     * @name Click ClickCartLink
+     */
+	public void Click_ClickCartLink()
+	{
+        
+		WebElement elem = getWebElement(ClickCartLinkElem);
+
+		if (elem == null) {
+    		ExtentReportManager.failStepWithScreenshot(m_Driver, "Click_ClickCartLink", "Click_ClickCartLink failed. Unable to locate object: " + ClickCartLinkElem.toString());
+
+    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Click_ClickCartLink", "Click_ClickCartLink failed. Unable to locate object: " + ClickCartLinkElem.toString());
+
+			Assert.fail("Unable to locate object: " + ClickCartLinkElem.toString());
+        }
+
+		elem.click();
+        
+
+		ExtentReportManager.passStep(m_Driver, "Click_ClickCartLink");
+
+		TestModellerLogger.PassStep(m_Driver, "Click_ClickCartLink");
+	}
+     
+	/**
+ 	 * Click Selenium Ruby
+     * @name Click Selenium Ruby
+     */
+	public void Click_Selenium_Ruby()
+	{
+        
+		WebElement elem = getWebElement(Selenium_RubyElem);
+
+		if (elem == null) {
+    		ExtentReportManager.failStepWithScreenshot(m_Driver, "Click_Selenium_Ruby", "Click_Selenium_Ruby failed. Unable to locate object: " + Selenium_RubyElem.toString());
+
+    		TestModellerLogger.FailStepWithScreenshot(m_Driver, "Click_Selenium_Ruby", "Click_Selenium_Ruby failed. Unable to locate object: " + Selenium_RubyElem.toString());
+
+			Assert.fail("Unable to locate object: " + Selenium_RubyElem.toString());
+        }
+
+		elem.click();
+        
+
+		ExtentReportManager.passStep(m_Driver, "Click_Selenium_Ruby");
+
+		TestModellerLogger.PassStep(m_Driver, "Click_Selenium_Ruby");
 	}}
